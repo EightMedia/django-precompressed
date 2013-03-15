@@ -94,7 +94,7 @@ class SaveGzippedCopyMixin(object):
         gzipped_file.write(pregzipped_file.read())
         gzipped_file.close()
         gzip_buffer.seek(0)
-        return File(gzip_buffer)
+        return ContentFile(gzip_buffer.getvalue())
 
     def post_save_gzipped(self, name, gzipped_name, gzipped_file):
 
